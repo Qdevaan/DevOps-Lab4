@@ -1,20 +1,20 @@
 # .github/workflows/ci.yml
 
-[cite_start]name: CI Test [cite: 93]
-[cite_start]on: [push] [cite: 94]
+name: CI Test
+on: [push]
 
-[cite_start]jobs: [cite: 95]
-  [cite_start]test: [cite: 96]
-    [cite_start]runs-on: ubuntu-latest [cite: 97]
+jobs:
+  test:
+    runs-on: ubuntu-latest
     steps:
-    - [cite_start]uses: actions/checkout@v3 [cite: 99]
+    - uses: actions/checkout@v3
     - name: Run Basic Check
       # Since this is a static Nginx container, we'll just verify the files exist.
-      # If this were a Node.js or Python app, you would run 'npm install' or 'pip install' here[cite: 100, 101].
+      # If this were a Node.js or Python app, you would run 'npm install' or 'pip install' here.
       run: |
         echo "Starting basic CI check..."
         ls -l 
         echo "Files checked successfully."
-    # If you had a linter or test runner for your app.js, you would add that here[cite: 90, 102].
+    # If you had a linter or test runner for your app.js, you would add that here.
     # - name: Run tests
     #   run: npm test
