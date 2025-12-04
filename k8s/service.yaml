@@ -1,0 +1,15 @@
+# k8s/service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-lab-service # Service name
+spec:
+  type: NodePort # Exposes the service on a specific port on the node
+  selector:
+    app: kube-lab-app # Connects this Service to the Pods with the label 'app: kube-lab-app'
+  ports:
+    - protocol: TCP
+      port: 8080 # The port the service itself will listen on
+      targetPort: 80 # The port on the Pod/container (Nginx port 80)
+      nodePort: 30080 # The port on your local machine to access the app (e.g., localhost:30080)
