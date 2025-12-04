@@ -1,0 +1,119 @@
+:root {
+    --bg-color: #0f172a;
+    --calc-bg: rgba(30, 41, 59, 0.7);
+    --btn-bg: rgba(51, 65, 85, 0.5);
+    --btn-hover: rgba(71, 85, 105, 0.8);
+    --operator-color: #38bdf8;
+    --equal-bg: #38bdf8;
+    --equal-hover: #0ea5e9;
+    --text-color: #f8fafc;
+    --secondary-text: #94a3b8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+        radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+        radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+}
+
+.calculator {
+    background: var(--calc-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    width: 350px;
+}
+
+.display {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 120px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.previous-operand {
+    color: var(--secondary-text);
+    font-size: 1rem;
+    min-height: 1.5rem;
+}
+
+.current-operand {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    background: var(--btn-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    font-size: 1.25rem;
+    border-radius: 16px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.operator {
+    color: var(--operator-color);
+    font-weight: 600;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.equal {
+    background: var(--equal-bg);
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.equal:hover {
+    background: var(--equal-hover);
+}
